@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "bower": "^1.4.1",
     "express": "~3.2.6",
     "jade": "~0.31.2",
     "random-js": "^1.0.4",
@@ -12,5 +13,5 @@
   "scripts": {
     "start": "node server.js",
     "postinstall": "bower install"
-    }
+  }
 }
