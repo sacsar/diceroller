@@ -1,0 +1,21 @@
+extends layout
+
+block body
+  .container
+    div(ng-controller='AppCtrl')
+     h1 Dice Roller
+     #rollbox.overflowable
+         p(ng-repeat='roll in rolls') {{roll}}
+     button.btn.btn-default(ng-click='roll(1)') Roll 1
+     button.btn.btn-default(ng-click='roll(2)') Roll 2
+     button.btn.btn-default(ng-click='roll(3)') Roll 3
+     button.btn.btn-default(ng-click='roll(7)') Roll 7
+  script(src='/socket.io/socket.io.js')
+  script(src='bower_components/angular/angular.js')
+  script(src='bower_components/angular-route/angular-route.js')
+  script(src='bower_components/angular-socket-io/socket.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
