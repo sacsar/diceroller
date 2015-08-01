@@ -11,10 +11,7 @@ angular.module('myApp.controllers', []).
   });
 
   socket.on('roll-response', function(data){
-    $scope.rolls.push(data.roll)
-    // scroll the div too
-    var element = document.getElementById("rollbox")
-    element.scrollTop = element.scrollHeight;
+    $scope.rolls.unshift(data.roll)
   });
 
   // scope methods
