@@ -11,6 +11,10 @@ block body
        button.btn.btn-default(ng-click='roll(2)') Roll 2
        button.btn.btn-default(ng-click='roll(3)') Roll 3
        button.btn.btn-default(ng-click='roll(7)') Roll 7
+     .checkbox
+       label
+         input(type='checkbox', ng-model='sound')
+         | Sound?
   script(src='/socket.io/socket.io.js')
   script(src='bower_components/angular/angular.js')
   script(src='bower_components/angular-route/angular-route.js')

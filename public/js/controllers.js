@@ -5,6 +5,8 @@
 angular.module('myApp.controllers', ['myApp.services']).
   controller('AppCtrl', function ($scope, socket, alert) {
   
+  $scope.sound = true; // have sound on by default
+
   // Socket listeners
   socket.on('init', function(data){
     $scope.rolls.push('Connected');
@@ -12,7 +14,8 @@ angular.module('myApp.controllers', ['myApp.services']).
 
   socket.on('roll-response', function(data){
     $scope.rolls.unshift(data.roll)
-    alert.play()
+    if($scope.sound)
+      alert.play()
   });
 
   // scope methods
