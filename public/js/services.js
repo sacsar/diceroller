@@ -1,4 +1,5 @@
-'use strict';
+(function(){
+    'use strict';
 
 /* Services */
 
@@ -15,8 +16,9 @@ module.factory('socket', function (socketFactory) {
 module.factory('alert', function($rootScope) {
   return {
     play: function(){
-      playAlert()
-      console.log("Play alert")
+      playAlert();
+      console.log("Play alert");
     }
   };
 });
+})();

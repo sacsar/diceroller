@@ -1,4 +1,5 @@
-'use strict';
+(function(){
+  'use strict';
 
 /* Controllers */
 
@@ -13,9 +14,9 @@ angular.module('myApp.controllers', ['myApp.services']).
   });
 
   socket.on('roll-response', function(data){
-    $scope.rolls.unshift(data.roll)
+    $scope.rolls.unshift(data.roll);
     if($scope.sound)
-      alert.play()
+      alert.play();
   });
 
   // scope methods
@@ -26,3 +27,4 @@ angular.module('myApp.controllers', ['myApp.services']).
     socket.emit('roll', n);
   };
 });
+})();
