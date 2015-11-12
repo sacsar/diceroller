@@ -10,3 +10,7 @@ exports.partials = function (req, res) {
   var name = req.params.name;
   res.render('partials/' + name);
 };
+
+exports.room = function(req, res){
+  res.render('room');
+};

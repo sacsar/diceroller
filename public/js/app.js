@@ -5,10 +5,9 @@
 
 angular.module('myApp', [
   'ngRoute',
-  'myApp.controllers',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives',
+  'diceroller.room',
 
   // 3rd party dependencies
   'btford.socket-io'
