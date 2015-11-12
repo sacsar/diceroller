@@ -5,7 +5,7 @@ module.exports = (grunt) ->
 
       # Linting
       jshint:
-        files: ['public/js/*.js', 'routs/*.js', 'server.js']
+        files: ['public/js/**/*.js', 'routes/*.js', 'server.js']
         options:
           jshintrc: '.jshintrc'
 
