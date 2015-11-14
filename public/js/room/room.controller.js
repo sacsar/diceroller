@@ -2,11 +2,11 @@
   'use strict';
 
   angular.module('diceroller.room')
-    .controller('DicerollerRoomController', ['socket', 'alert', '$scope', DicerollerRoomCtrl]);
+    .controller('DicerollerRoomController', ['socket', 'alert', '$scope', '$routeParams', DicerollerRoomCtrl]);
 
-  function DicerollerRoomCtrl(socket, alert, $scope){
+  function DicerollerRoomCtrl(socket, alert, $scope, $routeParams){
     // join the room
-    socket.emit('hello', $scope.id)
+    socket.emit('hello', $routeParams.id)
 
     $scope.sound = true; // have sound on by default
     // Socket listeners
@@ -20,7 +20,7 @@
         alert.play();
     });
 
-    socket.on('reply', function(data){
+    socket.on('join-notify', function(data){
       console.log(data)
     })
 

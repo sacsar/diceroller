@@ -1,4 +1,4 @@
 (function(){
     angular
-        .module('diceroller.room', ['myApp.services'])
+        .module('diceroller.room', ['diceroller.services'])
 })();
