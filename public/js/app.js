@@ -10,6 +10,7 @@ angular.module('diceroller', [
   'diceroller.room',
 
   // 3rd party dependencies
-  'btford.socket-io'
+  'btford.socket-io',
+  'ui.router'
 ]);
 })();
