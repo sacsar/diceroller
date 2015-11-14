@@ -10,6 +10,7 @@
         {
           templateUrl: '/partials/partial1',
           controller: 'HomeController'
+          controllerAs: 'home'
         })
         .when('/room/:id',
         {
