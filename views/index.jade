@@ -2,9 +2,8 @@ extends layout
 
 block body
   .container
-    p hello world
     div(ng-app="myApp")
-      room
+      room(id="1")
   script(src='/socket.io/socket.io.js')
   script(src='bower_components/angular/angular.js')
   script(src='bower_components/angular-route/angular-route.js')
