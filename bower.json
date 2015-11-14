@@ -7,9 +7,9 @@
     "components"
   ],
   "dependencies": {
-    "angular": "~1.2.14",
+    "angular": "~1.4.7",
     "angular-socket-io": "~0.3.0",
-    "angular-route": "~1.2.14",
+    "angular-route": "~1.4.7",
     "bootstrap": "~3.3.5",
     "alert": "https://raw.github.com/azer/alert/master/dist/alert.js"
   }
