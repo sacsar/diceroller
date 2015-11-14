@@ -2,16 +2,18 @@ extends layout
 
 block body
   .container
-    div(ng-app="myApp")
-      room(id="1")
+    div(ng-app="diceroller")
+      ng-view
   script(src='/socket.io/socket.io.js')
   script(src='bower_components/angular/angular.js')
   script(src='bower_components/angular-route/angular-route.js')
   script(src='bower_components/angular-socket-io/socket.js')
   script(src='bower_components/alert/index.js')
   script(src='js/app.js')
+  script(src='js/app.routes.js')
   script(src='js/services.js')
   script(src='js/filters.js')
   script(src="js/room/room.module.js")
   script(src='js/room/room.controller.js')
-  script(src='js/room/room.directive.js')
+  script(src='js/index.controller.js')
+//  script(src='js/room/room.directive.js')
