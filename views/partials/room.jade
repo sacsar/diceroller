@@ -1,0 +1,13 @@
+div
+  h1 Dice Roller
+  #rollbox.overflowable
+   p(ng-repeat='roll in rolls track by $index') {{roll}}
+  .btn-toolbar
+  button.btn.btn-default(ng-click='roll(1)') Roll 1
+  button.btn.btn-default(ng-click='roll(2)') Roll 2
+  button.btn.btn-default(ng-click='roll(3)') Roll 3
+  button.btn.btn-default(ng-click='roll(7)') Roll 7
+  .checkbox
+  label
+   input(type='checkbox', ng-model='sound')
+   | Sound?
