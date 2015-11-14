@@ -3,10 +3,10 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
+angular.module('diceroller', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
+  'diceroller.filters',
+  'diceroller.services',
   'diceroller.room',
 
   // 3rd party dependencies
