@@ -11,7 +11,7 @@ module.exports = function (socket) {
   socket.on('roll', function(n){
     roll = _.map(Random.dice(10, n)(engine),
 		 function(n){return n-1;});
-    console.log(roll);
+    console.log("Room " + socket.room + ": " + roll);
     roll = roll.join(', ');
     socket.emit('roll-response', {roll: roll});
     socket.broadcast.to(socket.room).emit('roll-response', {roll: roll});

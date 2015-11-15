@@ -6,7 +6,9 @@
 
   function DicerollerRoomCtrl(socket, alert, $scope, $stateParams){
     // join the room
-    socket.emit('hello', $stateParams.id)
+    socket.emit('hello', $stateParams.id);
+
+    $scope.id = $stateParams.id;
 
     $scope.sound = true; // have sound on by default
     // Socket listeners

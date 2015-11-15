@@ -1,7 +1,7 @@
 .container
   .centered
-    .btn-toolbar(role="toolbar")
-      div(ng-repeat="rm in home.rooms")
-        a(ui-sref="room({id: rm})"
-          class="btn btn-default btn-lg btn-block"
-          ) Room {{rm}}
+    h1 Dice Roller
+    div(ng-repeat="rm in home.rooms")
+      a(ui-sref="room({id: rm})"
+        class="btn btn-default btn-lg btn-block btn-vert"
+        ) Room {{rm}}
