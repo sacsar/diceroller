@@ -2,18 +2,17 @@
   'use strict';
 
   angular.module('diceroller.room')
-    .controller('DicerollerRoomController', ['socket', 'alert', '$scope', '$stateParams', DicerollerRoomCtrl]);
+    .controller('DicerollerRoomController', ['socket', 'alert', '$stateParams', DicerollerRoomCtrl]);
 
   function DicerollerRoomCtrl(socket, alert, $stateParams){
     var vm = this;
-    console.log($stateParams)
-    vm.id = $stateParams.$id;
+    vm.id = $stateParams.id;
     vm.sound = true; // sound on by default
     vm.rolls = [];
     vm.roll = roll;
 
     // join the room
-    socket.emit('hello', $stateParams.$id);
+    socket.emit('hello', $stateParams.id);
 
     // socket listeners
     socket.on('roll-response', pushRoll)
