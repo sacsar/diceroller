@@ -4,7 +4,7 @@
   angular.module('diceroller')
     .config(router)
 
-  function router($stateProvider, $urlRouterProvider){
+  function router($stateProvider, $urlRouterProvider, $locationProvider){
 
     $urlRouterProvider.otherwise('/');
 
@@ -20,5 +20,7 @@
         templateUrl: 'partials/room',
         controller: 'DicerollerRoomController'
       });
+
+      $locationProvider.html5Mode(true);
   }
 })();
