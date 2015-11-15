@@ -34,7 +34,7 @@ module.exports = (grunt) ->
         server:
           options:
             reporter: 'spec'
-          src: 'test/test-server.js'
+          src: 'test/server.test.js'
 
 
   # Load Grunt ask plugins
