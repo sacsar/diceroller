@@ -4,34 +4,28 @@
   angular.module('diceroller.room')
     .controller('DicerollerRoomController', ['socket', 'alert', '$scope', '$stateParams', DicerollerRoomCtrl]);
 
-  function DicerollerRoomCtrl(socket, alert, $scope, $stateParams){
+  function DicerollerRoomCtrl(socket, alert, $stateParams){
+    var vm = this;
+    console.log($stateParams)
+    vm.id = $stateParams.$id;
+    vm.sound = true; // sound on by default
+    vm.rolls = [];
+    vm.roll = roll;
+
     // join the room
-    socket.emit('hello', $stateParams.id);
+    socket.emit('hello', $stateParams.$id);
 
-    $scope.id = $stateParams.id;
+    // socket listeners
+    socket.on('roll-response', pushRoll)
 
-    $scope.sound = true; // have sound on by default
-    // Socket listeners
-    socket.on('init', function(data){
-      $scope.rolls.push('Connected');
-    });
-
-    socket.on('roll-response', function(data){
-      $scope.rolls.unshift(data.roll);
-      if($scope.sound)
-        alert.play();
-    });
-
-    socket.on('join-notify', function(data){
-      console.log(data)
-    })
-
-    // scope methods
-    //
-    $scope.rolls = [];
-
-    $scope.roll = function(n) {
+    function roll(n){
       socket.emit('roll', n);
-    };
+    }
+
+    function pushRoll(data){
+      vm.rolls.unshift(data.roll);
+      if(vm.sound)
+        alert.play();
+    }
   }
 })();

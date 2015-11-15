@@ -18,7 +18,8 @@
       .state('room', {
         url: '/room/{id:[123]}',
         templateUrl: 'partials/room',
-        controller: 'DicerollerRoomController'
+        controller: 'DicerollerRoomController',
+        controllerAs: 'room'
       });
 
       $locationProvider.html5Mode(true);
