@@ -1,4 +1,3 @@
-
 module.exports = (grunt) ->
 
   # Initialize the configuration.
@@ -6,7 +5,7 @@ module.exports = (grunt) ->
 
       # Linting
       jshint:
-        files: ['public/js/**/*.js', 'routes/*.js', 'server.js']
+        files: ['public/js/**/*.js', 'test/*.js', 'routes/*.js', 'server.js']
         options:
           jshintrc: '.jshintrc'
 
@@ -15,26 +14,36 @@ module.exports = (grunt) ->
         jshint:
           files: '<%= jshint.files %>'
           tasks: ['jshint']
+        express:
+          files: ['server.js', 'routes/*.js', '**/*.jade']
+        mochaTest:
+          files: ['test/**/*.js']
         options:
           livereload: true
 
       # express
       express:
         options:
-          port: 9000
-          hostname: '*'
-        livereload:
+          port: 3000
+          debug: true
+        server:
           options:
-            server: 'server.js'
-            livereload: true
-            serverreload: true
+            script: 'server.js'
+
+      mochaTest:
+        server:
+          options:
+            reporter: 'spec'
+          src: 'test/test-server.js'
+
 
   # Load Grunt ask plugins
   grunt.loadNpmTasks "grunt-contrib-jshint"
   grunt.loadNpmTasks "grunt-contrib-watch"
-  grunt.loadNpmTasks "grunt-express"
+  grunt.loadNpmTasks "grunt-express-server"
+  grunt.loadNpmTasks "grunt-mocha-test"
 
   # Default task
-  grunt.registerTask "default", ["jshint", "watch"]
-
-  grunt.registerTask "server", ["express:livereload", "watch"]
+  grunt.registerTask "default", ["jshint", "express:server", "mochaTest:server", "watch"]
+  grunt.registerTask "server", ["express:server", "watch"]
+  grunt.registerTask "test", ["express:server", "mochaTest:server"]
