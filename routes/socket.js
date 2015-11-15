@@ -14,7 +14,7 @@ module.exports = function (socket) {
     console.log(roll);
     roll = roll.join(', ');
     socket.emit('roll-response', {roll: roll});
-    socket.broadcast.emit('roll-response', {roll: roll});
+    socket.broadcast.to(socket.room).emit('roll-response', {roll: roll});
   });
 
   socket.on('hello', function(id){
