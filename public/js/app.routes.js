@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('diceroller')
-    .config(router)
+    .config(router);
 
   function router($stateProvider, $urlRouterProvider, $locationProvider){
 

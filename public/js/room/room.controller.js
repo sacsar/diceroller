@@ -15,7 +15,7 @@
     socket.emit('hello', $stateParams.id);
 
     // socket listeners
-    socket.on('roll-response', pushRoll)
+    socket.on('roll-response', pushRoll);
 
     function roll(n){
       socket.emit('roll', n);

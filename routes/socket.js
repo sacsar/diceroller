@@ -18,10 +18,10 @@ module.exports = function (socket) {
   });
 
   socket.on('hello', function(id){
-    socket.join(id)
-    socket.room = id
-    socket.emit('join-notify', 'Joined room' + id)
-    socket.broadcast.to(id).emit('join-notify', 'Someone joined')
-  })
+    socket.join(id);
+    socket.room = id;
+    socket.emit('join-notify', 'Joined room' + id);
+    socket.broadcast.to(id).emit('join-notify', 'Someone joined');
+  });
 };
 
