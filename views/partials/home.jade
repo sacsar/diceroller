@@ -1,6 +1,7 @@
 .container
   .centered
-    div(ng-repeat="rm in home.rooms")
-      button(type="button"
-              class="btn btn-default btn-lg btn-block"
-              ) Block level button
+    .btn-toolbar(role="toolbar")
+      div(ng-repeat="rm in home.rooms")
+        a(ui-sref="room({id: rm})"
+          class="btn btn-default btn-lg btn-block"
+          ) Room {{rm}}
