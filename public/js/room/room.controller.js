@@ -23,8 +23,9 @@
 
     function pushRoll(data){
       vm.rolls.unshift(data.roll);
-      if(vm.sound)
+      if(vm.sound){
         alert.play();
+      }
     }
   }
 })();

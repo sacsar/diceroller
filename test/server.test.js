@@ -1,3 +1,4 @@
+/* jshint undef:false */
 var expect = require('chai').expect;
 var io = require('socket.io-client');
 
