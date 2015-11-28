@@ -12,6 +12,6 @@
     "angular-route": "~1.4.7",
     "bootstrap": "~3.3.5",
     "alert": "https://raw.github.com/azer/alert/master/dist/alert.js",
-    "angular-ui-router": "~0.2.15",
+    "angular-ui-router": "~0.2.15"
   }
 }
