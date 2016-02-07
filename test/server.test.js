@@ -2,7 +2,7 @@
 var expect = require('chai').expect;
 var io = require('socket.io-client');
 
-var socketURL = "http://localhost:3000";
+var socketURL = "localhost:3000";
 
 var options = {
   transports: ['websocket'],
@@ -12,11 +12,19 @@ var options = {
 describe('Server', function(){
   var client = io.connect(socketURL, options);
 
+  client.on('connect', function(data){
+    console.log(data);
+    console.log("connected");
+  })
+
   it('should acknowledge a connection', function(){
     client.emit('hello', 1);
 
+    var d;
+
     client.on('join-notify', function(data){
-      expect(data).to.equl("Joined room 1");
+      expect(data).to.equal("Joined room 1");
+      console.log("callback")
     });
   });
 

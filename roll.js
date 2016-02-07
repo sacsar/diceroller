@@ -40,7 +40,7 @@ exports.roll = function(n, callback){
   };
 
   function fallback(){
-    roll = _.map(random.dice(10, n), function(k){return k-1;});
+    roll = _.map(r.dice(10, n), function(k){return k-1;});
     callback(roll);
   }
 
